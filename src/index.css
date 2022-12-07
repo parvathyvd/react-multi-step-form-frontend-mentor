@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+*,::after,::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --light-blue : #eef5ff;
+  --primary-text : #052e5c;
+}
+
+html{
+  font-size: 62.5%;
+  min-height: 100vh;
+}
+
+body{
+  max-width: 140rem;
+  background: var(--light-blue);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+#root{
+  width: 100vw;
+}
+.pb-2{
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
+}
+.header {
+  background: url('../public/assets/images/bg-sidebar-mobile.svg');
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh;
+  display: flex;
+  gap: 1rem;
+}
+.personal-info,.select-plan,.addons, .finish{
+      display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+  margin: -6rem auto 0;
+  width: 95%;
+  background: #fff;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: rgb(168, 168, 168);
+  border-radius: 1rem;
+}
+
+.personal-info h1, .select-plan h1,.addons h1,
+.finish h1 {
+  color: var(--primary-text);
+  font-weight: 700;
+  font-size: 3rem;
+  padding: 2rem 0 1rem 0;
+}
+.personal-info p, .addons p{
+  padding-bottom: 2rem;
+    line-height: 2.5rem;
+}
+.card h3{
+  color: var(--primary-text);
+  font-weight: 500;
+}
+.details .price{
+  color: rgb(177, 177, 177);
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.details .free{
+  color: var(--primary-text);
+    font-size: 1.5rem;
+      font-weight: 300;
+      display: block;
+      padding-top: 0.5rem;
+}
+.form-personal{
+  display: flex;
+  flex-direction: column;
+  width: 100%;;
+}
+input{
+    font-size: inherit;
+      font-weight: 300;
+}
+.personal-info input{
+      border: 1px solid rgb(189, 189, 189);
+}
+.personal-info input, .addons input{
+  margin-bottom: 2rem;
+      padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+}
+
+label {
+    font-size: inherit;
+  color: var(--primary-text);
+  padding-bottom: 0.3rem;
+}
+input::placeholder{
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(146, 146, 146);
+}
+.btn-round{
+  border: 2px solid #fff;
+  box-shadow: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+.btn-next{
+  background: var(--primary-text);
+  color: var(--light-blue);
+  padding: 1.3rem 2rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  margin-left: auto;
+}
+.btn-confirm{
+  background: #483ffc; 
+    color: #fff;
+    padding: 1.3rem 2rem;
+    font-size: 1.5rem;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-left: auto;
+}
+
+.active{
+  background: #bde0ff;
+  color: black;
+}
+.d-grid-2{
+ display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.card{
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 1rem;
+  width: 100%;
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+}
+.icon{
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}
+.details{
+  grid-column: 2/2;
+  color: var(--primary-text);
+  font-weight: 500;
+}
+
+.plan-toggle{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: #f6f7fd;
+  border-radius:1rem;
+          padding: 1rem 1.5rem;
+}
+.plan-radio{
+  background: var(--primary-text);
+  display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.4rem 0.4rem;
+    width: 5.5rem;
+    height: 2.3rem;
+    border-radius: 3rem;
+    position: relative;
+}
+.plan-radio input{
+  position: relative;
+  top:0.15rem;
+  transition: all 0.2s;
+  width: 5rem;
+    height: 2rem;
+    appearance: none;
+}
+.plan-radio input::after{
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgb(236, 236, 236);
+  border-radius: 50rem;
+  position: absolute;
+  left: 0rem;
+    top: 0rem;
+      opacity: 1;
+  z-index: 4;
+}
+.yearly, .monthly{
+  color: var(--primary-text);
+  padding: 1rem 0;
+}
+.toggle-visibility{ 
+  opacity: 0;
+}
+.disabled{
+  opacity: 0.5;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  background: #fff;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.copyright {
+  align-self: center;
+}
+.foot-buttons{
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.go-back{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: grey;
+  font-size: 1.5rem;
+}
+/******addons*****/
+.addons{
+  font-size: 1.5rem;
+}
+.addons h4{
+  font-weight: 300;
+  padding: 1rem 0 2rem 0;
+  line-height: 2.7rem;
+  font-size: 1.7rem;
+}
+.addons h3{
+  padding-bottom: 0.5rem;
+}
+.d-grid-3{
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  column-gap: 1.5rem;
+  position: relative;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 0.5rem;
+  height: 1rem;
+  position: relative;
+  z-index: 4;
+}
+
+.addons .info::before{
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+  position: absolute;
+  top:2.5rem;
+  left: 1rem;
+}
+
+input:checked + .info::before{
+  content: '\2713';
+  color: #fff;
+display: inline-block;
+  background: #4b40ff;
+  font-family: 'Ubuntu', sans-serif;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.perfee{
+  color: #4b40ff;
+  font-weight: 400;
+}
+.card-selected{
+  border: 1px solid #554de4;
+}
+/*****Finish*****/
+.final{
+  background: var(--light-blue);
+  width: 100%;
+  padding: 1rem;
+}
+.final h3{
+  font-size: 1.7rem;
+  color: var(--primary-text);
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.finish p{
+      line-height: 2.5rem;
+}
+.plan-detail{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkedItems{
+  margin-top: 1rem;
+}
+.checkItem{
+  display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.7rem;
+}
+.finish .price{
+  color: var(--primary-text);
+}
+.change{
+  text-decoration: underline;
+  margin-bottom: 1rem;
+  display: block;
+}
+.plan-detail{
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+.total-price{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 2rem 0.5rem;
+}
+.total-price span{
+    color: #483ffc;
+    font-weight: 500;
+}
