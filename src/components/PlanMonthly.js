@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 const PlanMonthly = () => {
   const { onChoosePlanNameHandler, selectPlanName } = useGlobalContext();
   return (
-    <>
+    <div className="select-plans">
       {monthly.map((mont) => {
         return (
           <Card
@@ -24,7 +24,7 @@ const PlanMonthly = () => {
           </Card>
         );
       })}
-    </>
+    </div>
   );
 };
 

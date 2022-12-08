@@ -40,7 +40,7 @@ body{
   display: flex;
   gap: 1rem;
 }
-.personal-info,.select-plan,.addons, .finish{
+.personal-info,.select-plan,.addons, .finish,.thankyou{
       display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -170,6 +170,9 @@ input::placeholder{
   grid-column: 2/2;
   color: var(--primary-text);
   font-weight: 500;
+}
+.select-plans{
+  width: 100%;
 }
 
 .plan-toggle{
@@ -312,9 +315,10 @@ display: inline-block;
 }
 /*****Finish*****/
 .final{
-  background: var(--light-blue);
-  width: 100%;
-  padding: 1rem;
+    background: var(--light-blue);
+      width: 100%;
+      padding: 2rem;
+      border-radius: 1rem;
 }
 .final h3{
   font-size: 1.7rem;
@@ -359,4 +363,115 @@ display: inline-block;
 .total-price span{
     color: #483ffc;
     font-weight: 500;
+}
+.d-mobile-hide{
+  display: none;
+}
+/*****thank you*****/
+
+.thankyou{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.thankyou svg{
+  width: 6rem;
+  height: 6rem;
+}
+.thankyou h3{
+  font-size: 2.5rem;
+  color: var(--primary-text);
+}
+.thankyou p{
+  color: rgb(159, 159, 159);
+  font-size: 1.3rem;
+  text-align: center;
+  padding-top: 2rem;
+  width: 60%;
+  line-height: 2.15rem;
+}
+
+@media screen and (min-width: 700px) {
+
+  #root{
+        border-radius: 2rem;
+        overflow: hidden;
+  }
+ .container{
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  min-height: 100vh;
+          border-radius: 2rem;
+            width: 80vw;
+              margin: 3rem auto;
+              background: #fff;
+              padding: 1rem;
+ }
+ .main-container{
+  height: 100%;
+ }
+ .header{
+  grid-row: 1/-1;
+  grid-column: 1/2;
+  height: 100%;
+  z-index: 5;
+  border-radius: 2rem;
+  flex-direction: column;
+  justify-content: start;
+  padding: 15%;
+  gap: 8%;
+  background: url('../public/assets/images/bg-sidebar-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+ }
+ .personal-info,
+ .select-plan,
+ .addons,
+ .finish{
+      margin: 0rem auto 0;
+      width: 100%;
+ }
+ .footer{
+  width: 80vw;
+    margin: 0 auto;
+        right: 10vw;
+ }
+ .foot-buttons{
+  width: 54vw;
+ }
+ .d-mobile-hide{
+  display: block;
+ }
+ .navigation{
+  display: flex;
+  gap: 1.5rem;
+  color: #fff;
+ }
+ .nav-info{
+  font-size: 1.4rem;
+  font-weight: 500;
+ }
+ .light{
+  opacity: 0.5;
+  font-size: 1.2rem;
+  display: block;
+  padding-bottom: 0.5rem;
+ }
+ .select-plans{
+  display: flex;
+    gap: 2rem;
+ }
+ .d-grid-2{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+ }
+ .thankyou p{
+  width: 55%;
+ }
+ 
 }

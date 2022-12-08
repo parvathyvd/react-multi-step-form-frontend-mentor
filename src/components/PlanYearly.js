@@ -7,7 +7,7 @@ const PlanYearly = () => {
   const { onChoosePlanNameHandler, selectPlanName } = useGlobalContext();
 
   return (
-    <>
+    <div className="select-plans">
       {yearly.map((year) => {
         return (
           <Card
@@ -26,7 +26,7 @@ const PlanYearly = () => {
           </Card>
         );
       })}
-    </>
+    </div>
   );
 };
 

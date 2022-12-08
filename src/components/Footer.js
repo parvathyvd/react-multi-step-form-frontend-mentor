@@ -2,14 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../context/PlanContext";
 
 const Footer = () => {
-  const {
-    selected,
-    setSelected,
-    selectPlan,
-    addonSelectedTemplate,
-    setAddonSelectedTemplate,
-    checkedItems,
-  } = useGlobalContext();
+  const { selected, setSelected, checkedItems } = useGlobalContext();
 
   const onNextClickHandler = () => {
     if (checkedItems.length === 0) {
@@ -19,24 +12,54 @@ const Footer = () => {
       setSelected((prev) => prev + 1);
     }
   };
+  const goBackHandler = () => {
+    if (selected <= 1) {
+      setSelected(1);
+    } else {
+      setSelected((prev) => prev - 1);
+    }
+  };
+  const onConfirmHandler = () => {
+    setSelected(5);
+  };
   return (
     <footer className="footer">
       <div className="foot-buttons">
-        {selected !== 1 && <button className="btn go-back">Go Back</button>}
-        <button
-          className={selected !== 4 ? "btn btn-next" : "btn btn-confirm"}
-          onClick={onNextClickHandler}
-        >
-          {selected === 4 ? "Confirm" : "Next Step"}
-        </button>
+        {selected !== 1 && selected !== 5 && (
+          <button className="btn go-back" onClick={goBackHandler}>
+            Go Back
+          </button>
+        )}
+        {selected !== 4 && selected !== 5 && (
+          <button className="btn btn-next" onClick={onNextClickHandler}>
+            Next Step
+          </button>
+        )}
+        {selected === 4 && selected !== 5 && (
+          <button className="btn btn-confirm" onClick={onConfirmHandler}>
+            Confirm
+          </button>
+        )}
       </div>
 
       <div className="copyright">
-        Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noreferrer"
+        >
           Frontend Mentor
         </a>
-        . Coded by <a href="#">Your Name Here</a>.
+        . Coded by{" "}
+        <a
+          href="https://www.frontendmentor.io/profile/parvathyvd"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Parvathy Vazhoor
+        </a>
+        .
       </div>
     </footer>
   );
