@@ -1,7 +1,7 @@
-# multi form project from frontend mentor - React, context api
+# Multi form project from frontend mentor - React, context api
 
-#Link
 https://react-js-multi-steps-form.netlify.app/
+
 #Multi step Frontend mentor projet using React, Context API
 #Link
 ![image](https://user-images.githubusercontent.com/25538870/206357104-e69612e0-f566-4f12-925d-b2e220393ed0.png)
