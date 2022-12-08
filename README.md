@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # multi form project from frontend mentor - React, context api
 
 #Link
