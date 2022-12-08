@@ -7,6 +7,12 @@ import { yearly } from "../Data/yearly";
 const PlanContext = createContext({});
 
 export const PlanContextProvider = ({ children }) => {
+  //personal info
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState(false);
+
   const [selected, setSelected] = useState(1);
   //select plan in the first stage monthly or yearly toggle
   const [selectPlan, setSelectPlan] = useState("monthly");
@@ -30,7 +36,7 @@ export const PlanContextProvider = ({ children }) => {
   };
 
   const onChoosePlanNameHandler = (name) => {
-    console.log(name);
+    // console.log(name);
     setSelectPlanName(name);
   };
 
@@ -38,19 +44,16 @@ export const PlanContextProvider = ({ children }) => {
     const targetChecked = e.target.id;
     let updatedItem;
 
-    console.log("target checked val", targetChecked);
     if (selectPlan === "monthly") {
       const item = addonMonthlyData.findIndex(
         (item) => item.id == targetChecked
       );
 
-      console.log("item clicked on is", item, "toggle");
       let existingItem = addonMonthlyData[item];
       updatedItem = {
         ...existingItem,
         checked: !existingItem.checked,
       };
-      console.log("item checked", updatedItem);
       setAddonMonthlyData(
         addonMonthlyData.map((item) =>
           item.id == e.target.id ? updatedItem : item
@@ -61,13 +64,11 @@ export const PlanContextProvider = ({ children }) => {
         (item) => item.id == targetChecked
       );
 
-      console.log("item clicked on is", item, "toggle");
       let existingItem = addonYearlyData[item];
       updatedItem = {
         ...existingItem,
         checked: !existingItem.checked,
       };
-      console.log("item checked", updatedItem);
       setAddonYearlyData(
         addonYearlyData.map((item) =>
           item.id == e.target.id ? updatedItem : item
@@ -93,6 +94,14 @@ export const PlanContextProvider = ({ children }) => {
   return (
     <PlanContext.Provider
       value={{
+        name,
+        setName,
+        phone,
+        setPhone,
+        email,
+        setEmail,
+        error,
+        setError,
         selected,
         setSelected,
         selectPlanName,

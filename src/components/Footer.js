@@ -2,16 +2,39 @@ import React from "react";
 import { useGlobalContext } from "../context/PlanContext";
 
 const Footer = () => {
-  const { selected, setSelected, checkedItems } = useGlobalContext();
+  const { selected, setSelected, checkedItems, name, email, phone, setError } =
+    useGlobalContext();
 
   const onNextClickHandler = () => {
     if (checkedItems.length === 0) {
+      return;
+    }
+    if (
+      selected === 1 &&
+      email.trim() === "" &&
+      name.trim() === "" &&
+      phone.trim() === ""
+    ) {
+      setError(true);
+      return;
+    }
+    if (selected === 1 && name.trim() === "") {
+      setError(true);
+      return;
+    }
+    if (selected === 1 && email.trim() === "") {
+      setError(true);
+      return;
+    }
+    if (selected === 1 && phone.trim() === "") {
+      setError(true);
       return;
     }
     if (selected < 4) {
       setSelected((prev) => prev + 1);
     }
   };
+
   const goBackHandler = () => {
     if (selected <= 1) {
       setSelected(1);

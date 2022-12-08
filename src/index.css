@@ -65,6 +65,17 @@ body{
   padding-bottom: 2rem;
     line-height: 2.5rem;
 }
+.label-error{
+  display: flex;
+  justify-content: space-between;
+}
+.personal-info input.red-border{
+  border: 1px solid red;
+}
+.error{
+ font-size: 1.2rem;
+ color: red;
+}
 .card h3{
   color: var(--primary-text);
   font-weight: 500;
@@ -117,6 +128,7 @@ input::placeholder{
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
+  cursor: pointer;
 }
 .btn-next{
   background: var(--primary-text);
@@ -130,6 +142,7 @@ input::placeholder{
   margin-bottom: 2rem;
   margin-right: 1rem;
   margin-left: auto;
+  cursor: pointer;
 }
 .btn-confirm{
   background: #483ffc; 
@@ -143,6 +156,7 @@ input::placeholder{
     margin-bottom: 2rem;
     margin-right: 1rem;
     margin-left: auto;
+    cursor: pointer;
 }
 
 .active{
@@ -282,6 +296,7 @@ input[type=checkbox] {
   height: 1rem;
   position: relative;
   z-index: 4;
+  cursor: pointer;
 }
 
 .addons .info::before{
