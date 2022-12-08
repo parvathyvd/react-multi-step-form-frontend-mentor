@@ -29,7 +29,7 @@ const Finish = () => {
         </div>
         <div className="checkedItems">
           {checkedItems.map((item) => {
-            console.log(item);
+            // console.log(item);
             return (
               <div className="checkItem" key={item.id}>
                 <p>{item.desc}</p>

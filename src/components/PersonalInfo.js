@@ -10,15 +10,21 @@ const PersonalInfo = () => {
       </p>
       <form className="form-personal">
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" placeholder="e.g. Stephen King" />
+        <input type="text" id="name" placeholder="e.g. Stephen King" required />
         <label htmlFor="email">Email Address</label>
         <input
           type="email"
           id="email"
           placeholder="e.g. stephenking@lorem.com"
+          required
         />
         <label htmlFor="phone">Phone Number</label>
-        <input type="text" id="phone" placeholder="e.g. +1 234 567 890" />
+        <input
+          type="number"
+          id="phone"
+          placeholder="e.g. +1 234 567 890"
+          required
+        />
       </form>
     </div>
   );

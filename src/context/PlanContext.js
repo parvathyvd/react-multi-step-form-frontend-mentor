@@ -22,14 +22,11 @@ export const PlanContextProvider = ({ children }) => {
   const [checkedItems, setCheckedItems] = useState([]);
 
   const onClickHandler = (e) => {
-    console.log("clickes", e.target.innerText);
     setSelected(+e.target.innerText);
   };
 
   const onSelectPlanHandler = (e) => {
-    console.log("checked on", e.target.value);
     setSelectPlan(e.target.value);
-    // e.target.classList.toggle("toggle-visibility");
   };
 
   const onChoosePlanNameHandler = (name) => {
